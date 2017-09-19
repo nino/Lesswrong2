@@ -118,9 +118,12 @@ class CommentsItem extends PureComponent {
             { showReplyButton ?
               <a className="comments-item-reply-link" onClick={this.showReply}>
                 <FormattedMessage id="comments.reply"/>
-              </a> : null } 
+              </a> : null }
             <div className="comments-item-vote">
-              <Components.Vote collection={Comments} document={this.props.comment} currentUser={this.props.currentUser}/>
+              <Components.Vote
+                collection={Comments}
+                document={this.props.comment}
+                currentUser={this.props.currentUser}/>
             </div>
           </div>
         </div>
