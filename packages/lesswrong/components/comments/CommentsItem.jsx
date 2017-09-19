@@ -118,7 +118,10 @@ class CommentsItem extends PureComponent {
             { showReplyButton ?
               <a className="comments-item-reply-link" onClick={this.showReply}>
                 <FormattedMessage id="comments.reply"/>
-              </a> : null } <div className="comments-item-vote"><Components.Vote collection={Comments} document={this.props.comment} currentUser={this.props.currentUser}/></div>
+              </a> : null } 
+            <div className="comments-item-vote">
+              <Components.Vote collection={Comments} document={this.props.comment} currentUser={this.props.currentUser}/>
+            </div>
           </div>
         </div>
         {this.state.showReply ? this.renderReply() : null}
@@ -197,7 +200,6 @@ class CommentsItem extends PureComponent {
         comment={this.props.comment}
         successCallback={this.editSuccessCallback}
         cancelCallback={this.editCancelCallback}
-        removeSuccessCallback={this.removeSuccessCallback}
       />
 }
 
